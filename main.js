@@ -76,16 +76,22 @@ function saveTimer(event) {
     localStorage.setItem("name", nameInput.value);
 }
 
+// On écoute le bouton "saveBtn" et exécute la fonction display
 saveBtn.addEventListener("click", display);
 
+
 function display() {
+    // On relie la var board qui contiendra les éléments à la div id="board"
     var board = document.getElementById("board");
+    // On crée l'élément p et lui donne une ID
     var pName = document.createElement("p");
     pName.id = "name";
+    // On envoie l'élément p dans le board
     board.appendChild(pName);
     var pTime = document.createElement("p");
     pTime.id = "time";
     board.appendChild(pTime);
+    //  On envoie le localStorage dans le contenu p
     pName.innerText = localStorage.getItem("name");
     pTime.innerText = localStorage.getItem("time");
 }
