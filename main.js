@@ -1,12 +1,10 @@
-var timer = document.getElementById("timer")
-var startBtn = document.getElementById("startBtn")
-var stopBtn = document.getElementById("stopBtn")
-var resetBtn = document.getElementById("resetBtn")
-var saveBtn = document.getElementById("saveBtn")
-var deleteBtn = document.getElementById("deleteBtn")
-var table = []
+var timer = document.getElementById("timer");
+var startBtn = document.getElementById("startBtn");
+var stopBtn = document.getElementById("stopBtn");
+var resetBtn = document.getElementById("resetBtn");
+var saveBtn = document.getElementById("saveBtn");
+var deleteBtn = document.getElementById("deleteBtn");
 
-table = localStorage.getItem("tableData")
 
 var startTime = 0
 var start = 0
@@ -64,7 +62,7 @@ function chronoReset(){
     start = new Date()   
 }
 // On écoute le bouton "deleteBtn" et exécute la fonction removeTimer
-deleteBtn.addEventListener("click", removeTimer)
+deleteBtn.addEventListener("click", removeTimer);
 // Cette fonction vide le local storage
 function removeTimer(event) { 
   localStorage.clear()
@@ -74,5 +72,20 @@ function removeTimer(event) {
 saveBtn.addEventListener("click", saveTimer);
 // Cette fonction sauvegarde dans le localStorage le timer ainsi que la value inscrite dans l'input
 function saveTimer(event) {
-    localStorage.setItem(nameInput.value, JSON.stringify(timer.innerHTML), "tableData")
+    localStorage.setItem("time", timer.innerHTML);
+    localStorage.setItem("name", nameInput.value);
+}
+
+saveBtn.addEventListener("click", display);
+
+function display() {
+    var board = document.getElementById("board");
+    var pName = document.createElement("p");
+    pName.id = "name";
+    board.appendChild(pName);
+    var pTime = document.createElement("p");
+    pTime.id = "time";
+    board.appendChild(pTime);
+    pName.innerText = localStorage.getItem("name");
+    pTime.innerText = localStorage.getItem("time");
 }
