@@ -170,16 +170,16 @@ function display() {
 
     leaderboardList.forEach(function (score) {
         // On crée l'élément p et lui donne une ID
-        var pName = document.createElement("p");
-        pName.className = "name";
+        var liName = document.createElement("li");
+        liName.className = "name";
         // On envoie l'élément p dans le board
-        board.appendChild(pName);
-        var pTime = document.createElement("p");
-        pTime.className = "time";
-        board.appendChild(pTime);
+        board.appendChild(liName);
+        var liTime = document.createElement("li");
+        liTime.className = "time";
+        board.appendChild(liTime);
         //  On envoie le localStorage dans le contenu p
-        pName.innerText = "name: " + score.name;
-        pTime.innerText = "time: " + score.time;
+        liName.innerText = "Name: " + score.name;
+        liTime.innerText = "Time: " + score.time;
         // board.innerHTML += "nom: " + score.name + "time: " + score.time;
     }
     );

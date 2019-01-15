@@ -6,25 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Chronomètre</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="/bootstrap_css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/chrono/bootstrap_css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js" defer></script>
 </head>
 
 <body>
     <div id="timer">00:00:00:00</div>
-    <button id="startBtn" class="btn btn-primary btn-lg">Start</button>
-    <button id="resetBtn">Reset</button>
+    <button id="startBtn" type="button">Start</button>
+    <button id="resetBtn" type="button">Reset</button>
     <div>
         <input id="nameInput">
-        <button id="saveBtn">Save</button>
+        <button id="saveBtn" type="button">Save</button>
     </div>
     <div>
-        <button id="deleteBtn">Delete</button>
-        <button id="showBtn">Show Result</button>
-
+        <button id="deleteBtn" type="button">Delete</button>
+        <button id="showBtn" type="button">Show Result</button>
     </div>
-    <div id="board">
+    <div>
+        <ul id="board">
+        </ul>
     </div>
 </body>
 
