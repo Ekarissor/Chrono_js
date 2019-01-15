@@ -85,33 +85,33 @@ startBtn.addEventListener("click", chronoStart)
 
 function chronoStart() {
 
-    if(startBtn.innerHTML == "Start" && timer == "00:00:00:00") {
+    if (startBtn.innerHTML == "Start" && timer == "00:00:00:00") {
 
-    start = new Date()
+        start = new Date()
 
-    chrono()
+        chrono()
 
-    startBtn.innerHTML = "Stop"
+        startBtn.innerHTML = "Stop"
 
     }
 
-    else if (startBtn.innerHTML == "Start" && timer != "00:00:00:00"){
+    else if (startBtn.innerHTML == "Start" && timer != "00:00:00:00") {
 
-    start = new Date()-diff
+        start = new Date() - diff
 
-	start = new Date(start)
+        start = new Date(start)
 
-    chrono()
+        chrono()
 
-    startBtn.innerHTML = "Stop"
+        startBtn.innerHTML = "Stop"
 
     }
 
     else {
 
-    clearTimeout(timerID)
+        clearTimeout(timerID)
 
-    startBtn.innerHTML = "Start"
+        startBtn.innerHTML = "Start"
 
     }
 
@@ -123,11 +123,11 @@ resetBtn.addEventListener("click", chronoReset)
 
 // Fonction qui remet à 0 le chronomètre
 
-function chronoReset(){
+function chronoReset() {
 
-	timer.innerHTML = "0:00:00:000"
+    timer.innerHTML = "0:00:00:000"
 
-    start = new Date()   
+    start = new Date()
 
 }
 
@@ -137,9 +137,9 @@ deleteBtn.addEventListener("click", removeTimer);
 
 // Cette fonction vide TOUT le local storage
 
-function removeTimer(event) { 
+function removeTimer(event) {
 
-  localStorage.clear()
+    localStorage.clear()
 
 }
 
@@ -152,10 +152,12 @@ saveBtn.addEventListener("click", saveTimer);
 // Cette fonction sauvegarde dans le localStorage le timer ainsi que la value inscrite dans l'input
 
 function saveTimer(event) {
-var lbObject = {name: nameInput.value, 
-				time: timer.innerHTML,};
-lbArray.push(lbObject);
-localStorage.setItem("leaderboard", JSON.stringify(lbArray));
+    var lbObject = {
+        name: nameInput.value,
+        time: timer.innerHTML,
+    };
+    lbArray.push(lbObject);
+    localStorage.setItem("leaderboard", JSON.stringify(lbArray));
 }
 
 
@@ -164,29 +166,22 @@ localStorage.setItem("leaderboard", JSON.stringify(lbArray));
 showBtn.addEventListener("click", display);
 
 function display() {
-	var leaderboardList = JSON.parse(localStorage.getItem('leaderboard'));
+    var leaderboardList = JSON.parse(localStorage.getItem('leaderboard'));
 
-	leaderboardList.forEach(function(score) {
- 		// On crée l'élément p et lui donne une ID
-		var pName = document.createElement("p");
-
-		pName.className = "name";
-
- 		// On envoie l'élément p dans le board
-		board.appendChild(pName);
-
- 		var pTime = document.createElement("p");
-
- 		pTime.className = "time";
-
- 		board.appendChild(pTime);
-
- 		//  On envoie le localStorage dans le contenu p
-		pName.innerText = "name: " + score.name;
-
- 		pTime.innerText = "time: " + score.time;
-		// board.innerHTML += "nom: " + score.name + "time: " + score.time;
-		}
-	);
+    leaderboardList.forEach(function (score) {
+        // On crée l'élément p et lui donne une ID
+        var pName = document.createElement("p");
+        pName.className = "name";
+        // On envoie l'élément p dans le board
+        board.appendChild(pName);
+        var pTime = document.createElement("p");
+        pTime.className = "time";
+        board.appendChild(pTime);
+        //  On envoie le localStorage dans le contenu p
+        pName.innerText = "name: " + score.name;
+        pTime.innerText = "time: " + score.time;
+        // board.innerHTML += "nom: " + score.name + "time: " + score.time;
+    }
+    );
 
 }
