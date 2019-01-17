@@ -157,7 +157,7 @@ saveBtn.addEventListener("click", saveTimer);
 
 function saveTimer(event) {
     if (nameInput.value == "") {
-            inputError.innerHTML = "YOU HAVE TO INSERT A NAME TO SAVE";
+        inputError.innerHTML = "YOU HAVE TO INSERT A NAME TO SAVE";
     }
     else {
         inputError.innerHTML = "";
