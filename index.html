@@ -13,20 +13,25 @@
 
 <body>
     <div id="timer">00:00:00:00</div>
-    <button id="startBtn" type="button">Start</button>
-    <button id="resetBtn" type="button">Reset</button>
+    <div>
+    <button class="btn btn-info" id="startBtn" type="button">Start</button>
+    <button class="btn btn-info" id="resetBtn" type="button">Reset</button>
+    </div>
     <div>
         <input id="nameInput">
-        <button id="saveBtn" type="button">Save</button>
+        <button class="btn btn-info" id="saveBtn" type="button">Save</button>
     </div>
     <div>
-        <button id="deleteBtn" type="button">Delete</button>
-        <button id="showBtn" type="button">Show Result</button>
+        <button class="btn btn-info" id="deleteBtn" type="button">Delete</button>
+        <button class="btn btn-info" id="showBtn" type="button">Show Result</button>
     </div>
-    <div>
+    <br>
+    <div class="d-flex text-center">
         <ul id="boardName">
+            <li class="title">NAME</li>
         </ul>
         <ul id="boardTime">
+            <li class="title">TIME</li>
         </ul>
     </div>
 </body>
