@@ -1,0 +1,23 @@
+#boardTime {
+    list-style: none;
+}
+
+#boardName {
+    list-style: none;
+}
+
+li {
+    width: 150px;
+    border-top: 2px solid #17A2B8;
+    border-left: 2px solid #17A2B8;
+    border-right: 2px solid #17A2B8;
+}
+
+.title {
+    background-color: #17A2B8;
+    color: white;
+}
+
+li:last-child {
+    border-bottom: 2px solid #17A2B8;
+}
