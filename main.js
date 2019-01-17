@@ -89,17 +89,17 @@ startBtn.addEventListener("click", chronoStart)
 
 function chronoStart() {
 
-    if (startBtn.innerHTML == "Start" && timer == "00:00:00:00") {
+    if (startBtn.innerHTML == "START" && timer == "00:00:00:00") {
 
         start = new Date()
 
         chrono()
 
-        startBtn.innerHTML = "Stop"
+        startBtn.innerHTML = "STOP"
 
     }
 
-    else if (startBtn.innerHTML == "Start" && timer != "00:00:00:00") {
+    else if (startBtn.innerHTML == "START" && timer != "00:00:00:00") {
 
         start = new Date() - diff
 
@@ -107,7 +107,7 @@ function chronoStart() {
 
         chrono()
 
-        startBtn.innerHTML = "Stop"
+        startBtn.innerHTML = "STOP"
 
     }
 
@@ -115,7 +115,7 @@ function chronoStart() {
 
         clearTimeout(timerID)
 
-        startBtn.innerHTML = "Start"
+        startBtn.innerHTML = "START"
 
     }
 
@@ -142,7 +142,7 @@ deleteBtn.addEventListener("click", removeTimer);
 function removeTimer(event) {
 
     localStorage.clear()
-
+    lbArray = []
 }
 
 
