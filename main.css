@@ -30,3 +30,18 @@ li:last-child {
 .title-time {
     margin-right: 40px; 
 }
+
+.timer {
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.btnDeleteShow {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.btnStartReset {
+    margin-bottom: 10px;
+}
