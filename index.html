@@ -11,8 +11,8 @@
     <script src="main.js" defer></script>
 </head>
 
-<body>
-    <div id="timer">00:00:00:00</div>
+<body class="text-center">
+    <div class="badge badge-secondary" id="timer">00:00:00:00</div>
     <div>
     <button class="btn btn-info" id="startBtn" type="button">Start</button>
     <button class="btn btn-info" id="resetBtn" type="button">Reset</button>
@@ -20,18 +20,19 @@
     <div>
         <input id="nameInput">
         <button class="btn btn-info" id="saveBtn" type="button">Save</button>
+        <div id="inputError"></div>
     </div>
     <div>
         <button class="btn btn-info" id="deleteBtn" type="button">Delete</button>
         <button class="btn btn-info" id="showBtn" type="button">Show Result</button>
     </div>
     <br>
-    <div class="d-flex text-center">
+    <div class="d-flex board">
         <ul id="boardName">
             <li class="title">NAME</li>
         </ul>
         <ul id="boardTime">
-            <li class="title">TIME</li>
+            <li class="title title-time">TIME</li>
         </ul>
     </div>
 </body>
