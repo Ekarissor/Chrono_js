@@ -129,9 +129,7 @@ resetBtn.addEventListener("click", chronoReset)
 
 function chronoReset() {
 
-    timer.innerHTML = "00:00:00:00"
-
-    start = new Date()
+    document.location.reload(true);
 
 }
 
@@ -157,7 +155,7 @@ saveBtn.addEventListener("click", saveTimer);
 
 function saveTimer(event) {
     if (nameInput.value == "") {
-            inputError.innerHTML = "Please inquire a name.";
+            inputError.innerHTML = "YOU HAVE TO INSERT A NAME TO SAVE";
     }
     else {
         inputError.innerHTML = "";
@@ -177,7 +175,8 @@ showBtn.addEventListener("click", display);
 
 function display() {
     var leaderboardList = JSON.parse(localStorage.getItem('leaderboard'));
-
+    boardName.innerHTML = '';
+    boardTime.innerHTML = '';
     leaderboardList.forEach(function (score) {
         // On crée l'élément p et lui donne une ID
         var liName = document.createElement("li");
