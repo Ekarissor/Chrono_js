@@ -52,3 +52,12 @@ body {
 #boardTime {
     margin-right: 40px;
 }
+
+@media print {
+    .beHidden {
+        display: none;
+    }
+    * {
+        color: black !important;
+    }
+}

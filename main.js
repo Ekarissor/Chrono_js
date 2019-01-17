@@ -19,7 +19,9 @@ var boardTime = document.getElementById("boardTime");
 
 var nameInput = document.getElementById("nameInput");
 
-var inputError = document.getElementById("inputError")
+var inputError = document.getElementById("inputError");
+
+var printBtn = document.getElementById("printBtn");
 
 var lbArray = [];
 
@@ -193,4 +195,10 @@ function display() {
     }
     );
 
+}
+
+printBtn.addEventListener("click", printPage);
+
+function printPage() {
+    window.print();
 }
