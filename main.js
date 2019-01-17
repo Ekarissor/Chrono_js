@@ -197,8 +197,10 @@ function display() {
 
 }
 
+// On écoute le bouton "showBtn" et exécute la fonction printPage
 printBtn.addEventListener("click", printPage);
 
+// printPage ouvre l'option print
 function printPage() {
     window.print();
 }
