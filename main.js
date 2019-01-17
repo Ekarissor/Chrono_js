@@ -157,16 +157,16 @@ saveBtn.addEventListener("click", saveTimer);
 
 function saveTimer(event) {
     if (nameInput.value == "") {
-            inputError.innerHTML == "Please inquire a name."
+            inputError.innerHTML = "Please inquire a name.";
     }
     else {
+        inputError.innerHTML = "";
         var lbObject = {
             name: nameInput.value,
             time: timer.innerHTML,
         };
         lbArray.push(lbObject);
         localStorage.setItem("leaderboard", JSON.stringify(lbArray));
-    
     }
 }
 
@@ -181,7 +181,7 @@ function display() {
     leaderboardList.forEach(function (score) {
         // On crée l'élément p et lui donne une ID
         var liName = document.createElement("li");
-        liName.className = "name";
+        liName.className = "name text-truncate";
         // On envoie l'élément p dans le board
         boardName.appendChild(liName);
         var liTime = document.createElement("li");
