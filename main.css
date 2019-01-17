@@ -1,18 +1,13 @@
 li {
     width: 8em;
-    border-top: 2px solid #6C757D;
-    border-left: 2px solid #6C757D;
-    border-right: 2px solid #6C757D;
     list-style: none;
+    background-color: #6C757D;
+    color: gold;
 }
 
 .title {
     background-color: #6C757D;
-    color: white;
-}
-
-li:last-child {
-    border-bottom: 2px solid #6C757D;
+    color: gold;
 }
 
 .title-time {
@@ -29,13 +24,31 @@ li:last-child {
 .btnDeleteShow {
     margin-top: 10px;
     margin-bottom: 30px;
+    color: gold;
 }
 
 .btnStartReset {
     margin-bottom: 10px;
+    color: gold;
 }
 
 .alertError {
     color: red;
-    font-weight: bolder;
+}
+
+#saveBtn {
+    color: gold;
+    margin-left: 5px;
+}
+
+#saveBtn:hover {
+    color: white;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+#boardTime {
+    margin-right: 40px;
 }
