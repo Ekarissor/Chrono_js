@@ -13,7 +13,9 @@ var deleteBtn = document.getElementById("deleteBtn");
 
 var showBtn = document.getElementById("showBtn");
 
-var board = document.getElementById("board");
+var boardName = document.getElementById("boardName");
+
+var boardTime = document.getElementById("boardTime");
 
 var nameInput = document.getElementById("nameInput");
 
@@ -173,10 +175,10 @@ function display() {
         var liName = document.createElement("li");
         liName.className = "name";
         // On envoie l'élément p dans le board
-        board.appendChild(liName);
+        boardName.appendChild(liName);
         var liTime = document.createElement("li");
         liTime.className = "time";
-        board.appendChild(liTime);
+        boardTime.appendChild(liTime);
         //  On envoie le localStorage dans le contenu p
         liName.innerText = "Name: " + score.name;
         liTime.innerText = "Time: " + score.time;
