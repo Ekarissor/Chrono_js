@@ -19,6 +19,8 @@ var boardTime = document.getElementById("boardTime");
 
 var nameInput = document.getElementById("nameInput");
 
+var inputError = document.getElementById("inputError")
+
 var lbArray = [];
 
 
@@ -127,7 +129,7 @@ resetBtn.addEventListener("click", chronoReset)
 
 function chronoReset() {
 
-    timer.innerHTML = "0:00:00:000"
+    timer.innerHTML = "00:00:00:00"
 
     start = new Date()
 
@@ -154,12 +156,18 @@ saveBtn.addEventListener("click", saveTimer);
 // Cette fonction sauvegarde dans le localStorage le timer ainsi que la value inscrite dans l'input
 
 function saveTimer(event) {
-    var lbObject = {
-        name: nameInput.value,
-        time: timer.innerHTML,
-    };
-    lbArray.push(lbObject);
-    localStorage.setItem("leaderboard", JSON.stringify(lbArray));
+    if (nameInput.value == "") {
+            inputError.innerHTML == "Please inquire a name."
+    }
+    else {
+        var lbObject = {
+            name: nameInput.value,
+            time: timer.innerHTML,
+        };
+        lbArray.push(lbObject);
+        localStorage.setItem("leaderboard", JSON.stringify(lbArray));
+    
+    }
 }
 
 
@@ -180,8 +188,8 @@ function display() {
         liTime.className = "time";
         boardTime.appendChild(liTime);
         //  On envoie le localStorage dans le contenu p
-        liName.innerText = "Name: " + score.name;
-        liTime.innerText = "Time: " + score.time;
+        liName.innerText = score.name;
+        liTime.innerText = score.time;
         // board.innerHTML += "nom: " + score.name + "time: " + score.time;
     }
     );
