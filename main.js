@@ -1,3 +1,4 @@
+// Here are all the variables used to create the stopwatch
 
 var timer = document.getElementById("timer");
 
@@ -25,7 +26,7 @@ var printBtn = document.getElementById("printBtn");
 
 var lbArray = [];
 
-
+//  ------------------------------------
 
 var startTime = 0
 
@@ -83,11 +84,11 @@ function chrono() {
 
 }
 
-// On écoute le bouton "startBtn" et exécute la fonction chronoStart.
+// The button "startBtn" execute the function "chronoStart" when clicked.
 
 startBtn.addEventListener("click", chronoStart)
 
-// Fonction qui lance le chronomètre et le met en pause
+// This function has for mission to start and pause the stopwatch.
 
 function chronoStart() {
 
@@ -123,11 +124,11 @@ function chronoStart() {
 
 }
 
-// On écoute le bouton "resetBtn" et exécute la fonction chronoReset
+// The button "resetBtn" execute the function "chronoReset" when clicked.
 
 resetBtn.addEventListener("click", chronoReset)
 
-// Fonction qui remet à 0 le chronomètre
+// This function has for mission to reload the window what reset our stopwatch.
 
 function chronoReset() {
 
@@ -135,11 +136,11 @@ function chronoReset() {
 
 }
 
-// On écoute le bouton "deleteBtn" et exécute la fonction removeTimer
+// The button "deleteBtn" execute the function "removeTimer" when clicked.
 
 deleteBtn.addEventListener("click", removeTimer);
 
-// Cette fonction vide TOUT le local storage
+// This function has for mission to clear the localStorage and also delete all data in our table.
 
 function removeTimer(event) {
 
@@ -149,11 +150,11 @@ function removeTimer(event) {
 
 
 
-// On écoute le bouton "saveBtn" et exécute la fonction saveTimer
+// The button "saveBtn" execute the function "saveTimer" when clicked.
 
 saveBtn.addEventListener("click", saveTimer);
 
-// Cette fonction sauvegarde dans le localStorage le timer ainsi que la value inscrite dans l'input
+// This function has for mission to check if input is not empty. If not, it will save data into the localStorage and push it in a table.
 
 function saveTimer(event) {
     if (nameInput.value == "") {
@@ -171,27 +172,28 @@ function saveTimer(event) {
 }
 
 
-// On écoute le bouton "showBtn" et exécute la fonction display
+// The button "showBtn" execute the function "display" when clicked.
 
 showBtn.addEventListener("click", display);
+
+// This function has for mission to display our table by getting data into localStorage and push them into "li" element in a table.
 
 function display() {
     var leaderboardList = JSON.parse(localStorage.getItem('leaderboard'));
     boardName.innerHTML = '';
     boardTime.innerHTML = '';
     leaderboardList.forEach(function (score) {
-        // On crée l'élément p et lui donne une ID
+        // We create the element "li" and gave him classes
         var liName = document.createElement("li");
         liName.className = "name text-truncate";
-        // On envoie l'élément p dans le board
+        // Push our element "li" into the table
         boardName.appendChild(liName);
         var liTime = document.createElement("li");
         liTime.className = "time";
         boardTime.appendChild(liTime);
-        //  On envoie le localStorage dans le contenu p
+        //  Sending localStorage data into "li" element
         liName.innerText = score.name;
         liTime.innerText = score.time;
-        // board.innerHTML += "nom: " + score.name + "time: " + score.time;
     }
     );
 
